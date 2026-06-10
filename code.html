@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-lowest": "#ffffff",
+                    "on-surface-variant": "#45464d",
+                    "on-secondary-container": "#54647a",
+                    "outline-variant": "#c6c6cd",
+                    "surface-container-low": "#f2f4f6",
+                    "secondary-container": "#d0e1fb",
+                    "surface-variant": "#e0e3e5",
+                    "primary": "#000000",
+                    "on-primary-fixed": "#131b2e",
+                    "on-tertiary-fixed": "#271901",
+                    "on-surface": "#191c1e",
+                    "surface-container-highest": "#e0e3e5",
+                    "surface-tint": "#565e74",
+                    "surface-bright": "#f7f9fb",
+                    "background": "#f7f9fb",
+                    "secondary-fixed-dim": "#b7c8e1",
+                    "inverse-on-surface": "#eff1f3",
+                    "surface-container": "#eceef0",
+                    "secondary-fixed": "#d3e4fe",
+                    "primary-fixed-dim": "#bec6e0",
+                    "on-tertiary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "outline": "#76777d",
+                    "tertiary": "#000000",
+                    "tertiary-fixed": "#fcdeb5",
+                    "tertiary-fixed-dim": "#dec29a",
+                    "on-tertiary-container": "#98805d",
+                    "on-primary-fixed-variant": "#3f465c",
+                    "on-primary-container": "#7c839b",
+                    "surface-dim": "#d8dadc",
+                    "surface": "#f7f9fb",
+                    "on-secondary": "#ffffff",
+                    "primary-fixed": "#dae2fd",
+                    "inverse-primary": "#bec6e0",
+                    "error": "#ba1a1a",
+                    "surface-container-high": "#e6e8ea",
+                    "on-primary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "on-background": "#191c1e",
+                    "primary-container": "#131b2e",
+                    "tertiary-container": "#271901",
+                    "secondary": "#505f76",
+                    "on-error-container": "#93000a",
+                    "on-secondary-fixed-variant": "#38485d",
+                    "inverse-surface": "#2d3133",
+                    "on-secondary-fixed": "#0b1c30",
+                    "on-tertiary-fixed-variant": "#574425"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xs": "4px",
+                    "margin-mobile": "16px",
+                    "gutter": "24px",
+                    "md": "24px",
+                    "margin-desktop": "64px",
+                    "base": "8px",
+                    "lg": "48px",
+                    "xl": "80px",
+                    "sm": "12px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Montserrat"],
+                    "headline-lg-mobile": ["Montserrat"],
+                    "display-lg": ["Montserrat"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "title-md": ["Montserrat"],
+                    "label-sm": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "title-md": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "label-sm": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #f7f9fb;
+            color: #191c1e;
+        }
+    </style>
+</head>
+<body class="bg-surface">
+<!-- TopNavBar -->
+<header class="bg-surface-bright sticky top-0 z-50 shadow-sm w-full h-20">
+<nav class="flex justify-between items-center max-w-[1200px] mx-auto px-margin-mobile md:px-margin-desktop w-full h-full">
+<div class="font-headline-lg text-headline-lg tracking-tight text-primary">LUXE ESTATE</div>
+<div class="hidden md:flex items-center gap-xl">
+<div class="flex gap-lg">
+<a class="font-title-md text-title-md text-primary border-b-2 border-primary pb-1 transition-colors" href="#">Propiedades</a>
+<a class="font-title-md text-title-md text-on-surface-variant hover:text-primary transition-colors" href="#">Proyectos</a>
+<a class="font-title-md text-title-md text-on-surface-variant hover:text-primary transition-colors" href="#">Nosotros</a>
+<a class="font-title-md text-title-md text-on-surface-variant hover:text-primary transition-colors" href="#">Contacto</a>
+</div>
+<button class="bg-primary text-on-primary px-md py-sm rounded-lg font-label-sm text-label-sm hover:opacity-90 transition-all scale-95 duration-150 ease-in-out">
+                    Acceso Panel
+                </button>
+</div>
+<div class="md:hidden">
+<span class="material-symbols-outlined text-primary text-3xl">menu</span>
+</div>
+</nav>
+</header>
+<main>
+<!-- Hero Section with Search -->
+<section class="relative h-[819px] min-h-[600px] flex items-center justify-center">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover brightness-[0.7]" data-alt="A sprawling modern luxury villa with floor-to-ceiling glass windows at sunset, reflecting a golden sky. The architectural masterpiece features clean lines, a massive infinity pool in the foreground, and lush tropical landscaping. The lighting is warm and dramatic, highlighting the high-end materials like white concrete and dark wood accents. The overall atmosphere is serene, elite, and ultra-sophisticated." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZk0IBtyMKUcSJXf0psb4tUiMDbsCUfeoyNeFCD3MtEE-lLN2BK2XN-piIF02hEQKdM7E7LcnXrO492g1Zgr7841Bp3hLpklSGh8SiHWlziIPRp2HlWWToRtjupa5ZROc2CPKmJPeME_aGAMt7j4ePADzvYmrGhEYhll4V9d-adNuMgCpJ0lOoQBf24bZUazHLRgEFc9RzPA-rqbFSXOHYLKOkd-Wu65C8Jwn4JPaCBi4BDTRJxR-tdLG4GyVYrJJirZ0_FyNHOCQz"/>
+</div>
+<div class="relative z-10 text-center max-w-[1200px] px-margin-mobile">
+<h1 class="font-display-lg text-display-lg text-white mb-md">Encuentra tu refugio de lujo</h1>
+<p class="font-body-lg text-body-lg text-white/90 mb-xl max-w-2xl mx-auto">Selección exclusiva de propiedades premium diseñadas para un estilo de vida extraordinario.</p>
+<!-- Hero Search Bar -->
+<div class="bg-white p-xs md:p-sm rounded-full shadow-lg flex flex-col md:flex-row items-center gap-base max-w-4xl mx-auto border border-outline-variant/30">
+<div class="flex items-center gap-sm px-md flex-1 w-full border-r border-outline-variant/30">
+<span class="material-symbols-outlined text-outline">location_on</span>
+<input class="w-full bg-transparent border-none focus:ring-0 font-body-md text-body-md text-on-surface" placeholder="¿Dónde quieres vivir?" type="text"/>
+</div>
+<div class="hidden md:flex items-center gap-sm px-md flex-1 border-r border-outline-variant/30">
+<span class="material-symbols-outlined text-outline">home</span>
+<select class="w-full bg-transparent border-none focus:ring-0 font-body-md text-body-md text-on-surface">
+<option>Tipo de propiedad</option>
+<option>Villa</option>
+<option>Ático</option>
+<option>Mansión</option>
+</select>
+</div>
+<button class="w-full md:w-auto bg-primary text-on-primary px-xl py-md rounded-full font-title-md text-title-md flex items-center justify-center gap-sm hover:scale-105 transition-transform">
+<span class="material-symbols-outlined">search</span>
+                        Buscar
+                    </button>
+</div>
+</div>
+</section>
+<!-- Advanced Filters & Listing Section -->
+<section class="max-w-[1200px] mx-auto px-margin-mobile md:px-margin-desktop py-xl">
+<div class="flex flex-col lg:flex-row gap-lg">
+<!-- Sidebar Filters -->
+<aside class="w-full lg:w-72 flex-shrink-0">
+<div class="bg-surface-container-lowest p-md rounded-xl shadow-sm border border-outline-variant/20 sticky top-24">
+<div class="flex items-center justify-between mb-lg">
+<h3 class="font-title-md text-title-md text-primary">Filtros</h3>
+<button class="text-label-sm font-label-sm text-outline hover:text-primary transition-colors">Limpiar</button>
+</div>
+<div class="space-y-lg">
+<div>
+<label class="font-label-sm text-label-sm text-on-surface-variant mb-base block uppercase tracking-wider">Rango de Precio</label>
+<div class="space-y-sm">
+<input class="w-full accent-primary" type="range"/>
+<div class="flex justify-between font-label-sm text-label-sm text-outline">
+<span>500k €</span>
+<span>50M €</span>
+</div>
+</div>
+</div>
+<div>
+<label class="font-label-sm text-label-sm text-on-surface-variant mb-base block uppercase tracking-wider">Dormitorios</label>
+<div class="grid grid-cols-4 gap-xs">
+<button class="py-sm rounded-lg border border-outline-variant text-label-sm font-label-sm hover:bg-secondary-container transition-colors">1+</button>
+<button class="py-sm rounded-lg border border-outline-variant text-label-sm font-label-sm hover:bg-secondary-container transition-colors">2+</button>
+<button class="py-sm rounded-lg border border-outline-variant text-label-sm font-label-sm bg-primary text-on-primary">3+</button>
+<button class="py-sm rounded-lg border border-outline-variant text-label-sm font-label-sm hover:bg-secondary-container transition-colors">4+</button>
+</div>
+</div>
+<div>
+<label class="font-label-sm text-label-sm text-on-surface-variant mb-base block uppercase tracking-wider">Comodidades</label>
+<div class="space-y-base">
+<label class="flex items-center gap-sm font-body-md text-body-md text-on-surface">
+<input checked="" class="rounded text-primary focus:ring-primary h-5 w-5" type="checkbox"/> Piscina
+                                    </label>
+<label class="flex items-center gap-sm font-body-md text-body-md text-on-surface">
+<input class="rounded text-primary focus:ring-primary h-5 w-5" type="checkbox"/> Gimnasio
+                                    </label>
+<label class="flex items-center gap-sm font-body-md text-body-md text-on-surface">
+<input class="rounded text-primary focus:ring-primary h-5 w-5" type="checkbox"/> Bodega
+                                    </label>
+<label class="flex items-center gap-sm font-body-md text-body-md text-on-surface">
+<input class="rounded text-primary focus:ring-primary h-5 w-5" type="checkbox"/> Domótica
+                                    </label>
+</div>
+</div>
+</div>
+</div>
+</aside>
+<!-- Property Grid -->
+<div class="flex-1">
+<div class="flex justify-between items-center mb-lg">
+<h2 class="font-headline-lg text-headline-lg text-primary">Propiedades Destacadas</h2>
+<div class="flex items-center gap-sm font-label-sm text-label-sm text-outline">
+<span>Ordenar por:</span>
+<select class="bg-transparent border-none focus:ring-0 font-bold text-on-surface p-0 cursor-pointer">
+<option>Más recientes</option>
+<option>Precio descendente</option>
+<option>Precio ascendente</option>
+</select>
+</div>
+</div>
+<div class="space-y-lg">
+<!-- Property Card 1 (Horizontal Pattern for Premium feel) -->
+<div class="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col md:flex-row border border-outline-variant/10">
+<div class="md:w-2/5 relative overflow-hidden h-64 md:h-auto">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A minimalist architectural masterpiece villa in Marbella, Spain. The structure features expansive cantilevered concrete planes and enormous sliding glass walls. The morning light is soft and cool, casting long elegant shadows across a pristine deck area. The surrounding landscape includes manicured Mediterranean gardens and a view of the sea in the distance. The overall aesthetic is one of quiet, modern luxury and expensive simplicity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSr8hnr8DaOWjuHpJYpVfUy5Trh6UDSMFTk0gqk33yxHgpwpDPyTn3At8kNfUsBfZICANSWUb3pqQkKCRbGCRi00hzMxBrclBfuqzD51HXeHHkokxACHK5Dw8xq96XvTtB5zHMrXUWjNbKbnXkZLzscEGYhb2LwStp7Sdleu7fbyRLY4M_YqOnqXTsa0PNGrFCmYExywci4a34f1_caTriCk1S0c5pFpHta-D9NcQtVqrrrT01twNUn7gwgCZVqtyo39jd-sKoq9Tk"/>
+<div class="absolute top-md left-md bg-white/90 backdrop-blur-md px-sm py-xs rounded-full font-label-sm text-label-sm text-primary font-bold">VILLA EXCLUSIVA</div>
+</div>
+<div class="p-md md:p-lg flex-1 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-base">
+<h3 class="font-title-md text-title-md text-primary">Villa Serenity</h3>
+<div class="font-headline-lg text-headline-lg text-primary">4.250.000 €</div>
+</div>
+<div class="flex items-center gap-xs text-outline font-body-md text-body-md mb-md">
+<span class="material-symbols-outlined text-[20px]">location_on</span>
+                                        La Zagaleta, Marbella
+                                    </div>
+<div class="flex flex-wrap gap-md mb-lg">
+<div class="flex items-center gap-xs bg-surface-container px-sm py-xs rounded-lg text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[18px]">square_foot</span> 850 m²
+                                        </div>
+<div class="flex items-center gap-xs bg-surface-container px-sm py-xs rounded-lg text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[18px]">bed</span> 5 Hab
+                                        </div>
+<div class="flex items-center gap-xs bg-surface-container px-sm py-xs rounded-lg text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[18px]">bathtub</span> 6 Baños
+                                        </div>
+</div>
+</div>
+<div class="flex justify-between items-center gap-md">
+<button class="flex-1 bg-primary text-on-primary py-sm rounded-lg font-title-md text-title-md hover:opacity-90 transition-opacity">Contactar Agente</button>
+<button class="p-sm rounded-lg border border-outline-variant text-primary hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Property Grid 2 & 3 -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-outline-variant/10">
+<div class="relative h-64 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A modern seaside mansion in Mallorca with bright white stone walls and floor-to-ceiling glass that integrates the interior with the terrace. The outdoor area features a long infinity pool that merges with the crystal clear turquoise Mediterranean sea. The lighting is bright and high-key, characteristic of a sunny midday in Spain. The atmosphere is vibrant, airy, and exemplifies coastal luxury living." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDT4wIGmutQh2QEDOceUy3TH03bZYt4oRvAL8xeEYAzphblVmLJWn6sSkdf1RtlEs20XLADAAts7ddQRM5EUTyLZmmMO4bYCiRStfZmzBlpso8up3r9vxLVDv_zwmi4Gi2XKUPyXWszON98WczA-IizIcQRIxBOm-Mq4mtCtRbld9ZQdvI-RRrLZnulDok59ufy6j-i7NvADpQjejHv2vh435drLLoAkgb0HC0k0X9x2jcOCM4rDN5tDvUfBeiInvRBQvucdRqp4OnC"/>
+<div class="absolute top-md right-md bg-primary text-white px-md py-xs rounded-full font-label-sm text-label-sm">NUEVO</div>
+</div>
+<div class="p-md">
+<div class="flex justify-between items-center mb-base">
+<h3 class="font-title-md text-title-md text-primary">Blue Horizon Mansion</h3>
+<div class="font-title-md text-title-md font-bold text-primary">7.800.000 €</div>
+</div>
+<p class="text-outline font-body-md text-body-md mb-md">Andratx, Mallorca</p>
+<div class="flex justify-between mb-lg">
+<div class="text-center">
+<div class="font-label-sm text-label-sm text-on-surface-variant">Metros</div>
+<div class="font-title-md text-title-md text-primary">1.200</div>
+</div>
+<div class="text-center border-x border-outline-variant/30 px-md">
+<div class="font-label-sm text-label-sm text-on-surface-variant">Habitaciones</div>
+<div class="font-title-md text-title-md text-primary">7</div>
+</div>
+<div class="text-center">
+<div class="font-label-sm text-label-sm text-on-surface-variant">Baños</div>
+<div class="font-title-md text-title-md text-primary">8</div>
+</div>
+</div>
+<button class="w-full py-sm rounded-lg border-2 border-primary text-primary font-title-md text-title-md hover:bg-primary hover:text-on-primary transition-all">Ver Detalles</button>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-outline-variant/10">
+<div class="relative h-64 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A sophisticated luxury penthouse interior in Madrid with high ceilings and huge industrial-style windows overlooking the city skyline. The interior design is Corporate Modern with dark wood floors, designer velvet furniture in deep jewel tones, and a grand piano near the window. The evening lighting is warm and layered, creating a moody, upscale city atmosphere. Pristine and organized architectural photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEdlQASqHE_tO_SoXFxW8PTPpKnNlXl8sZY-d-Joe-H1RW-3vxVueGOdmDJGVHV8D12ujvDNItdSHZOhRPjMVGcunP7YsHnzDnkPYzar6H90dJcbYdZ5jVWn4oeFSL5dtqWXEazuYd-ovPNBs8bpx1T13m01w7vRVqjzPNCTWrgyCZDmx9tJtqXhnr2OqJBzUuaGxiSN7yjJJx1lvPei-8rccoNPPnbOaCf0z3ZYqvSnUToGGh9M_Mc1F0JqigawStpZErsNbtb2Nr"/>
+</div>
+<div class="p-md">
+<div class="flex justify-between items-center mb-base">
+<h3 class="font-title-md text-title-md text-primary">Skyline Penthouse</h3>
+<div class="font-title-md text-title-md font-bold text-primary">2.950.000 €</div>
+</div>
+<p class="text-outline font-body-md text-body-md mb-md">Salamanca, Madrid</p>
+<div class="flex justify-between mb-lg">
+<div class="text-center">
+<div class="font-label-sm text-label-sm text-on-surface-variant">Metros</div>
+<div class="font-title-md text-title-md text-primary">320</div>
+</div>
+<div class="text-center border-x border-outline-variant/30 px-md">
+<div class="font-label-sm text-label-sm text-on-surface-variant">Habitaciones</div>
+<div class="font-title-md text-title-md text-primary">3</div>
+</div>
+<div class="text-center">
+<div class="font-label-sm text-label-sm text-on-surface-variant">Baños</div>
+<div class="font-title-md text-title-md text-primary">4</div>
+</div>
+</div>
+<button class="w-full py-sm rounded-lg border-2 border-primary text-primary font-title-md text-title-md hover:bg-primary hover:text-on-primary transition-all">Ver Detalles</button>
+</div>
+</div>
+</div>
+<!-- Property Card 4 (Horizontal Pattern) -->
+<div class="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col md:flex-row border border-outline-variant/10">
+<div class="md:w-2/5 relative overflow-hidden h-64 md:h-auto">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A modern brutalist luxury home nestled in a pine forest. The house is built from textured gray concrete and warm cedar wood planks. Sharp geometric shapes and large glass openings create a striking contrast with the organic shapes of the tall trees. The lighting is soft morning mist, giving the scene a quiet, naturalistic, and extremely high-end feel. The image should capture the essence of privacy and avant-garde design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAX9sHBRAyicdp7PHKWNyzAjdCNsAZCTYDFR89Xu3SXC_-cj9cHaxCuXJ6b5s4yqt4vKAllHfDENJrfMH0nvcmQalMxbnuaqSEZ2H3ZSP0dxkyDfAxHWZ-xgHSEHe_uNCAI1a0KDajo72ZCmjbwGQBqezXWOOW-jXbal2pyFDLSjrMObMRSfT0iyRp_9g6YYTV-Klnri-GDc_7okv4QANh8cVtstpjEjx8Zuez5a2kGyB3zUTOfARWK7o25Mz8WYDB_W8vEbJxKq3H8"/>
+</div>
+<div class="p-md md:p-lg flex-1 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-base">
+<h3 class="font-title-md text-title-md text-primary">Forest Retreat Villa</h3>
+<div class="font-headline-lg text-headline-lg text-primary">1.850.000 €</div>
+</div>
+<div class="flex items-center gap-xs text-outline font-body-md text-body-md mb-md">
+<span class="material-symbols-outlined text-[20px]">location_on</span>
+                                        Sotogrande, Cádiz
+                                    </div>
+<div class="flex flex-wrap gap-md mb-lg">
+<div class="flex items-center gap-xs bg-surface-container px-sm py-xs rounded-lg text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[18px]">square_foot</span> 450 m²
+                                        </div>
+<div class="flex items-center gap-xs bg-surface-container px-sm py-xs rounded-lg text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[18px]">bed</span> 4 Hab
+                                        </div>
+<div class="flex items-center gap-xs bg-surface-container px-sm py-xs rounded-lg text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[18px]">pool</span> Infinity Pool
+                                        </div>
+</div>
+</div>
+<div class="flex justify-between items-center gap-md">
+<button class="flex-1 bg-primary text-on-primary py-sm rounded-lg font-title-md text-title-md hover:opacity-90 transition-opacity">Contactar Agente</button>
+<button class="p-sm rounded-lg border border-outline-variant text-primary hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="mt-xl flex justify-center gap-sm">
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-primary text-white font-bold">1</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-white border border-outline-variant hover:border-primary transition-colors text-primary font-bold">2</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-white border border-outline-variant hover:border-primary transition-colors text-primary font-bold">3</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-white border border-outline-variant hover:border-primary transition-colors text-primary font-bold">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter / CTA Section -->
+<section class="bg-primary-container text-white py-xl">
+<div class="max-w-[800px] mx-auto text-center px-margin-mobile">
+<h2 class="font-display-lg text-display-lg mb-md">¿Buscas algo específico?</h2>
+<p class="font-body-lg text-body-lg text-on-primary-container mb-lg">Déjanos tus datos y un asesor personal te contactará con una selección a medida de tus necesidades.</p>
+<div class="flex flex-col md:flex-row gap-base">
+<input class="flex-1 bg-white/10 border border-white/20 rounded-lg px-md py-sm font-body-md text-body-md placeholder:text-white/50 focus:ring-1 focus:ring-white outline-none" placeholder="Tu correo electrónico" type="email"/>
+<button class="bg-white text-primary px-xl py-sm rounded-lg font-title-md text-title-md hover:scale-105 transition-transform">Suscribirse</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-highest dark:bg-inverse-surface w-full">
+<div class="w-full py-lg px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-md max-w-[1200px] mx-auto">
+<div class="flex flex-col gap-base text-center md:text-left">
+<div class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary">LUXE ESTATE</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant max-w-xs">Especialistas en propiedades de alto standing y asesoramiento patrimonial inmobiliario.</p>
+</div>
+<div class="flex flex-col items-center md:items-end gap-md">
+<div class="flex gap-lg">
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Privacidad</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Términos y Condiciones</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Mapa del Sitio</a>
+</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">
+                    © 2024 Luxe Estate Professional. Todos los derechos reservados.
+                </div>
+</div>
+</div>
+</footer>
+<!-- Contact Modal (Hidden) -->
+<div class="fixed inset-0 bg-primary/40 backdrop-blur-sm z-[100] hidden items-center justify-center p-margin-mobile" id="contact-modal">
+<div class="bg-surface-container-lowest w-full max-w-lg rounded-2xl shadow-xl overflow-hidden animate-in fade-in zoom-in duration-300">
+<div class="p-lg">
+<div class="flex justify-between items-start mb-lg">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-primary">Contactar con un Agente</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Estamos aquí para ayudarte a encontrar tu hogar ideal.</p>
+</div>
+<button class="p-xs text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<form class="space-y-md">
+<div>
+<label class="font-label-sm text-label-sm text-on-surface-variant mb-xs block">Nombre Completo</label>
+<input class="w-full bg-surface-container-low border-none rounded-lg p-md focus:ring-2 focus:ring-primary" type="text"/>
+</div>
+<div>
+<label class="font-label-sm text-label-sm text-on-surface-variant mb-xs block">Correo Electrónico</label>
+<input class="w-full bg-surface-container-low border-none rounded-lg p-md focus:ring-2 focus:ring-primary" type="email"/>
+</div>
+<div>
+<label class="font-label-sm text-label-sm text-on-surface-variant mb-xs block">Mensaje (Opcional)</label>
+<textarea class="w-full bg-surface-container-low border-none rounded-lg p-md focus:ring-2 focus:ring-primary" rows="4"></textarea>
+</div>
+<button class="w-full bg-primary text-on-primary py-md rounded-lg font-title-md text-title-md hover:opacity-90 transition-all">Enviar Solicitud</button>
+</form>
+</div>
+</div>
+</div>
+</body></html>
