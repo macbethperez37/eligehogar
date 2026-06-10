@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface-variant": "#45464d",
+                        "on-secondary-container": "#54647a",
+                        "outline-variant": "#c6c6cd",
+                        "surface-container-low": "#f2f4f6",
+                        "secondary-container": "#d0e1fb",
+                        "surface-variant": "#e0e3e5",
+                        "primary": "#000000",
+                        "on-primary-fixed": "#131b2e",
+                        "on-tertiary-fixed": "#271901",
+                        "on-surface": "#191c1e",
+                        "surface-container-highest": "#e0e3e5",
+                        "surface-tint": "#565e74",
+                        "surface-bright": "#f7f9fb",
+                        "background": "#f7f9fb",
+                        "secondary-fixed-dim": "#b7c8e1",
+                        "inverse-on-surface": "#eff1f3",
+                        "surface-container": "#eceef0",
+                        "secondary-fixed": "#d3e4fe",
+                        "primary-fixed-dim": "#bec6e0",
+                        "on-tertiary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "outline": "#76777d",
+                        "tertiary": "#000000",
+                        "tertiary-fixed": "#fcdeb5",
+                        "tertiary-fixed-dim": "#dec29a",
+                        "on-tertiary-container": "#98805d",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "on-primary-container": "#7c839b",
+                        "surface-dim": "#d8dadc",
+                        "surface": "#f7f9fb",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed": "#dae2fd",
+                        "inverse-primary": "#bec6e0",
+                        "error": "#ba1a1a",
+                        "surface-container-high": "#e6e8ea",
+                        "on-primary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "on-background": "#191c1e",
+                        "primary-container": "#131b2e",
+                        "tertiary-container": "#271901",
+                        "secondary": "#505f76",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed-variant": "#38485d",
+                        "inverse-surface": "#2d3133",
+                        "on-secondary-fixed": "#0b1c30",
+                        "on-tertiary-fixed-variant": "#574425"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "md": "24px",
+                        "margin-desktop": "64px",
+                        "base": "8px",
+                        "lg": "48px",
+                        "xl": "80px",
+                        "sm": "12px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Montserrat"],
+                        "headline-lg-mobile": ["Montserrat"],
+                        "display-lg": ["Montserrat"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "title-md": ["Montserrat"],
+                        "label-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "title-md": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "label-sm": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "500"}]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface flex min-h-screen">
+<!-- SideNavBar Component -->
+<aside class="hidden md:flex flex-col p-md gap-base border-r border-outline-variant/30 bg-surface-container-lowest dark:bg-surface-container-high docked left h-screen w-64 shadow-sm">
+<!-- Brand Header -->
+<div class="flex items-center gap-sm px-base mb-lg">
+<div class="w-10 h-10 bg-primary flex items-center justify-center rounded-lg">
+<span class="material-symbols-outlined text-on-primary">apartment</span>
+</div>
+<div>
+<h1 class="font-title-md text-title-md font-bold text-primary dark:text-primary-fixed">Gestión Luxe</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Administrador</p>
+</div>
+</div>
+<!-- Navigation Links -->
+<nav class="flex-1 space-y-xs">
+<!-- Active: Dashboard -->
+<a class="flex items-center gap-sm p-sm bg-secondary-container dark:bg-on-secondary-fixed-variant text-on-secondary-container dark:text-secondary-fixed rounded-lg font-bold translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-sm text-label-sm">Dashboard</span>
+</a>
+<a class="flex items-center gap-sm p-sm text-on-surface-variant dark:text-outline-variant hover:bg-surface-variant dark:hover:bg-on-surface-variant rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="home_work">home_work</span>
+<span class="font-label-sm text-label-sm">Propiedades</span>
+</a>
+<a class="flex items-center gap-sm p-sm text-on-surface-variant dark:text-outline-variant hover:bg-surface-variant dark:hover:bg-on-surface-variant rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-label-sm text-label-sm">Clientes</span>
+</a>
+<a class="flex items-center gap-sm p-sm text-on-surface-variant dark:text-outline-variant hover:bg-surface-variant dark:hover:bg-on-surface-variant rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+<span class="font-label-sm text-label-sm">Mensajes</span>
+</a>
+</nav>
+<!-- CTA Action -->
+<div class="mt-auto px-base py-md">
+<button class="w-full bg-primary text-on-primary py-sm rounded-xl font-title-md text-[14px] flex items-center justify-center gap-xs hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined !text-[18px]">add_circle</span>
+                Nueva Propiedad
+            </button>
+</div>
+<!-- Footer Links -->
+<div class="border-t border-outline-variant/30 pt-md space-y-xs">
+<a class="flex items-center gap-sm p-sm text-on-surface-variant dark:text-outline-variant hover:bg-surface-variant/50 rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-sm text-label-sm">Ajustes</span>
+</a>
+<a class="flex items-center gap-sm p-sm text-on-surface-variant dark:text-outline-variant hover:bg-surface-variant/50 rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="font-label-sm text-label-sm">Cerrar Sesión</span>
+</a>
+</div>
+</aside>
+<!-- Main Canvas -->
+<main class="flex-1 flex flex-col overflow-y-auto">
+<!-- Header -->
+<header class="h-20 flex items-center justify-between px-margin-mobile md:px-margin-desktop bg-surface-bright border-b border-outline-variant/10">
+<div class="flex flex-col">
+<h2 class="font-headline-lg text-headline-lg text-primary tracking-tight">Panel de Control</h2>
+<p class="font-body-md text-label-sm text-on-surface-variant">Bienvenido de nuevo, Admin User Profile</p>
+</div>
+<div class="flex items-center gap-md">
+<div class="relative hidden md:block">
+<input class="bg-surface-container-low border-none rounded-full py-2 pl-10 pr-4 w-64 focus:ring-2 focus:ring-primary text-label-sm" placeholder="Buscar propiedades..." type="text"/>
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+</div>
+<button class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center relative">
+<span class="material-symbols-outlined text-on-surface-variant">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container">
+<img alt="Admin User Profile" data-alt="A professional headshot of a modern real estate executive in a sharp business suit, set against a blurred high-end architectural background. The lighting is crisp and corporate, fitting a sophisticated light-mode UI aesthetic with clean lines and premium professional energy." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAS_nfFdaV_jadS4Y9rhB3ZKRNa_HVT9e80M_3j_f5Pzb50gOw0zSbsgV-bhofEn2ACKNZHjhg3LrsGyVbY6bCARsrl3gSacJX1Ml7RcLbXbesg2mOyQkr6aHf_SnOFJMBVS2KSET6FPkW8RwGukw4U2suaGgOxFukLGn8cnuxADDSeoeTZWtgFa0lwjKYFt5z9bhDfD8SSzgeJ_gr-Vov1JLYH_HPwF9pD_GwQ00osbm4xuZJTNqjoq6Fk8U9XikVcSoaqzqa5sLtD"/>
+</div>
+</div>
+</header>
+<!-- Content Area -->
+<section class="p-margin-mobile md:p-margin-desktop space-y-lg">
+<!-- Statistics Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-md">
+<!-- Total Propiedades -->
+<div class="bg-surface-container-lowest p-md rounded-xl shadow-[0px_4px_20px_rgba(15,23,42,0.05)] border border-outline-variant/10 flex flex-col gap-base">
+<div class="flex justify-between items-start">
+<div class="p-base bg-secondary-container rounded-lg">
+<span class="material-symbols-outlined text-on-secondary-fixed-variant">domain</span>
+</div>
+<span class="text-on-tertiary-container font-label-sm bg-tertiary-fixed px-2 py-0.5 rounded-full">+12%</span>
+</div>
+<div>
+<p class="font-label-sm text-on-surface-variant">Total Propiedades</p>
+<p class="font-headline-lg text-headline-lg">142</p>
+</div>
+</div>
+<!-- Vendidas -->
+<div class="bg-surface-container-lowest p-md rounded-xl shadow-[0px_4px_20px_rgba(15,23,42,0.05)] border border-outline-variant/10 flex flex-col gap-base">
+<div class="flex justify-between items-start">
+<div class="p-base bg-secondary-container rounded-lg">
+<span class="material-symbols-outlined text-on-secondary-fixed-variant">sell</span>
+</div>
+<span class="text-on-tertiary-container font-label-sm bg-tertiary-fixed px-2 py-0.5 rounded-full">+5%</span>
+</div>
+<div>
+<p class="font-label-sm text-on-surface-variant">Vendidas</p>
+<p class="font-headline-lg text-headline-lg">28</p>
+</div>
+</div>
+<!-- Reservadas -->
+<div class="bg-surface-container-lowest p-md rounded-xl shadow-[0px_4px_20px_rgba(15,23,42,0.05)] border border-outline-variant/10 flex flex-col gap-base">
+<div class="flex justify-between items-start">
+<div class="p-base bg-secondary-container rounded-lg">
+<span class="material-symbols-outlined text-on-secondary-fixed-variant">event_available</span>
+</div>
+<span class="text-on-surface-variant font-label-sm bg-surface-container px-2 py-0.5 rounded-full">-2%</span>
+</div>
+<div>
+<p class="font-label-sm text-on-surface-variant">Reservadas</p>
+<p class="font-headline-lg text-headline-lg">14</p>
+</div>
+</div>
+<!-- Ingresos Mensuales -->
+<div class="bg-primary text-on-primary p-md rounded-xl shadow-lg flex flex-col gap-base">
+<div class="flex justify-between items-start">
+<div class="p-base bg-white/10 rounded-lg">
+<span class="material-symbols-outlined text-white">payments</span>
+</div>
+<span class="text-white font-label-sm bg-white/20 px-2 py-0.5 rounded-full">+24%</span>
+</div>
+<div>
+<p class="font-label-sm text-white/70">Ingresos del Mes</p>
+<p class="font-headline-lg text-headline-lg text-white">€45,280</p>
+</div>
+</div>
+</div>
+<!-- Chart & Activity Section -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-md">
+<!-- Sales Chart -->
+<div class="lg:col-span-2 bg-surface-container-lowest p-md rounded-xl shadow-[0px_4px_20px_rgba(15,23,42,0.05)] border border-outline-variant/10">
+<div class="flex justify-between items-center mb-lg">
+<h3 class="font-title-md text-title-md text-primary">Ventas Mensuales</h3>
+<select class="bg-surface-container-low border-none rounded-lg text-label-sm focus:ring-1 focus:ring-primary">
+<option>Últimos 6 meses</option>
+<option>Este año</option>
+</select>
+</div>
+<!-- Minimalist SVG Chart placeholder -->
+<div class="relative h-64 w-full flex items-end justify-between px-4 pb-8">
+<div class="w-12 bg-secondary-container rounded-t-lg h-[40%]"></div>
+<div class="w-12 bg-secondary-container rounded-t-lg h-[60%]"></div>
+<div class="w-12 bg-secondary-container rounded-t-lg h-[55%]"></div>
+<div class="w-12 bg-secondary-container rounded-t-lg h-[80%]"></div>
+<div class="w-12 bg-primary rounded-t-lg h-[95%]"></div>
+<div class="w-12 bg-secondary-container rounded-t-lg h-[70%]"></div>
+<!-- Absolute lines -->
+<div class="absolute bottom-0 left-0 w-full border-b border-outline-variant/20"></div>
+<div class="absolute bottom-8 left-0 w-full border-b border-outline-variant/5 border-dashed"></div>
+<div class="absolute bottom-32 left-0 w-full border-b border-outline-variant/5 border-dashed"></div>
+</div>
+<div class="flex justify-between px-4 text-label-sm text-on-surface-variant mt-2">
+<span>Ene</span><span>Feb</span><span>Mar</span><span>Abr</span><span>May</span><span>Jun</span>
+</div>
+</div>
+<!-- Recent Lead/Activity -->
+<div class="bg-surface-container-lowest p-md rounded-xl shadow-[0px_4px_20px_rgba(15,23,42,0.05)] border border-outline-variant/10">
+<h3 class="font-title-md text-title-md text-primary mb-md">Actividad Reciente</h3>
+<div class="space-y-md">
+<div class="flex gap-sm">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">person</span>
+</div>
+<div>
+<p class="font-label-sm text-on-surface font-semibold">Carlos Méndez</p>
+<p class="text-[12px] text-on-surface-variant">Interesado en Villa Mediterránea</p>
+<p class="text-[10px] text-outline mt-1">Hace 15 min</p>
+</div>
+</div>
+<div class="flex gap-sm">
+<div class="w-10 h-10 rounded-full bg-tertiary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">sell</span>
+</div>
+<div>
+<p class="font-label-sm text-on-surface font-semibold">Propiedad Vendida</p>
+<p class="text-[12px] text-on-surface-variant">Ático Centro Histórico</p>
+<p class="text-[10px] text-outline mt-1">Hace 2 horas</p>
+</div>
+</div>
+<div class="flex gap-sm">
+<div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+</div>
+<div>
+<p class="font-label-sm text-on-surface font-semibold">Nuevo Mensaje</p>
+<p class="text-[12px] text-on-surface-variant">Solicitud de visita para mañana</p>
+<p class="text-[10px] text-outline mt-1">Hace 4 horas</p>
+</div>
+</div>
+</div>
+<button class="w-full mt-lg text-primary font-label-sm hover:underline">Ver todo el historial</button>
+</div>
+</div>
+<!-- Properties Table (CRUD) -->
+<div class="bg-surface-container-lowest rounded-xl shadow-[0px_4px_20px_rgba(15,23,42,0.05)] border border-outline-variant/10 overflow-hidden">
+<div class="p-md flex justify-between items-center bg-surface-container-low/50">
+<h3 class="font-title-md text-title-md text-primary">Gestión de Propiedades</h3>
+<div class="flex gap-sm">
+<button class="px-4 py-2 bg-white border border-outline-variant/30 rounded-lg text-label-sm flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]">filter_list</span>
+                            Filtros
+                        </button>
+<button class="px-4 py-2 bg-white border border-outline-variant/30 rounded-lg text-label-sm flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]">download</span>
+                            Exportar
+                        </button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-surface-container-low/30 border-y border-outline-variant/10 text-on-surface-variant font-label-sm">
+<tr>
+<th class="p-md">Propiedad</th>
+<th class="p-md">Ubicación</th>
+<th class="p-md">Precio</th>
+<th class="p-md">Estado</th>
+<th class="p-md">Acciones</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/10 font-body-md text-[14px]">
+<!-- Property Row 1 -->
+<tr class="hover:bg-surface-container-low/20 transition-colors">
+<td class="p-md">
+<div class="flex items-center gap-sm">
+<div class="w-12 h-12 rounded-lg overflow-hidden shrink-0">
+<img alt="Villa Mar" data-alt="A luxury contemporary villa with floor-to-ceiling glass walls, a stunning infinity pool reflecting a warm sunset sky, and minimalist architectural lines. The setting is exclusive and serene, emphasizing premium real estate aesthetics with high-end materials and sophisticated outdoor lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAU_DJmwVSto8I3Gda6hWw2XbKd_PoJiYjUfeIfnvsk6Nqwq0d9uxW9pgzTIVfB-u_LE-RK1dLYTpRrAtb25MRc_aGcnB5pubjI22EfhSkY91fN9bjvQsaLBy4ma0qYPgZ8B3zmw5ZTBTJ_K9TccAl0IXNaRTJWJ89BwzxhLVGyyXEWpd5ORIoqYgA4q6D-HnmKXIRusT9x8ZTaKCXQsE6822fl8bfjpNkviUOdtuK8a7KNDicV0C3e22BQbOy7K5hEAfwtmpCANX-6"/>
+</div>
+<span class="font-semibold text-primary">Villa Mediterránea</span>
+</div>
+</td>
+<td class="p-md text-on-surface-variant">Marbella, Costa del Sol</td>
+<td class="p-md font-bold">€1,250,000</td>
+<td class="p-md">
+<span class="bg-secondary-container text-on-secondary-fixed-variant px-3 py-1 rounded-full text-[11px] font-bold">Disponible</span>
+</td>
+<td class="p-md">
+<div class="flex gap-sm">
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-outline hover:text-primary hover:bg-surface-variant/50">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-outline hover:text-error hover:bg-error-container/30">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Property Row 2 -->
+<tr class="hover:bg-surface-container-low/20 transition-colors">
+<td class="p-md">
+<div class="flex items-center gap-sm">
+<div class="w-12 h-12 rounded-lg overflow-hidden shrink-0">
+<img alt="City Loft" data-alt="An industrial-chic urban loft with exposed brick walls, high ceilings, and large factory-style windows. The interior is decorated with mid-century modern furniture and lush green plants, bathed in soft, natural morning light, creating an airy and sophisticated city-living atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAO5mKU1_T-eeFC5Iaim9rUN-TuXKpEiiyPBj8-Kg4H0Xcf6FPPsAbw3r0EXHo5JUlpR49Mcq3qu7uNKglWzSKCbfWIaIBSYHSsM9mXsmkXQnfIhhAzPxLwv_TOl1fMG3SZgI5412Rorybuebh8w9huwn-Fa492Xb2xul6gGzvg39qfhjovHr56JgN1Q1ApXd23xYnkAewwT29JGW3TSh-mfOhNaRYjSrvsVI33h-QHXxrZvlzAs4ytNoEV6egrWL955EWv_RfL4WS-"/>
+</div>
+<span class="font-semibold text-primary">Loft Industrial</span>
+</div>
+</td>
+<td class="p-md text-on-surface-variant">Madrid, Chamberí</td>
+<td class="p-md font-bold">€640,000</td>
+<td class="p-md">
+<span class="bg-tertiary-fixed text-on-tertiary-fixed-variant px-3 py-1 rounded-full text-[11px] font-bold">Reservada</span>
+</td>
+<td class="p-md">
+<div class="flex gap-sm">
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-outline hover:text-primary hover:bg-surface-variant/50">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-outline hover:text-error hover:bg-error-container/30">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Property Row 3 -->
+<tr class="hover:bg-surface-container-low/20 transition-colors">
+<td class="p-md">
+<div class="flex items-center gap-sm">
+<div class="w-12 h-12 rounded-lg overflow-hidden shrink-0">
+<img alt="Garden House" data-alt="A modern suburban family residence with a clean white facade and warm wood accents, featuring a manicured front garden and large windows. The lighting is golden hour, casting long, soft shadows and highlighting the premium architectural finishes and welcoming neighborhood vibe." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAE8FH17YcGnqAem5a-9BpRMwFy6RqKBparc2WmWdxAwaYB6THCm3BhIMzJ_WXG-gi_u1IfYrG4UEGW4FhSw6Wo8oEJsFQjpdKJxQJ5I3FTZLEC3X8vSBS_pQhsuqdoEsfcPAvjLvpJea4coy0Dw5QJDkanQ_TS5gtE55oVPt-jM7R_JeRNb_gr0r-0WEBvWsNzv4S762cNAxcxUzTYi6RdyoKN520ZgVOV4pjtccRAIsLAw7ZR6qelOnDzs6ql_hCwxXKuK1TO0920"/>
+</div>
+<span class="font-semibold text-primary">Casa del Jardín</span>
+</div>
+</td>
+<td class="p-md text-on-surface-variant">Barcelona, Sant Cugat</td>
+<td class="p-md font-bold">€890,000</td>
+<td class="p-md">
+<span class="bg-surface-container-highest text-on-surface-variant px-3 py-1 rounded-full text-[11px] font-bold">Vendida</span>
+</td>
+<td class="p-md">
+<div class="flex gap-sm">
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-outline hover:text-primary hover:bg-surface-variant/50">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-outline hover:text-error hover:bg-error-container/30">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-md bg-surface-container-low/30 border-t border-outline-variant/10 flex justify-between items-center text-label-sm text-on-surface-variant">
+<span>Mostrando 3 de 142 propiedades</span>
+<div class="flex gap-xs">
+<button class="w-8 h-8 rounded-lg border border-outline-variant/30 flex items-center justify-center hover:bg-white">1</button>
+<button class="w-8 h-8 rounded-lg bg-primary text-on-primary flex items-center justify-center">2</button>
+<button class="w-8 h-8 rounded-lg border border-outline-variant/30 flex items-center justify-center hover:bg-white">3</button>
+<button class="px-3 h-8 rounded-lg border border-outline-variant/30 flex items-center justify-center hover:bg-white">Siguiente</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full py-lg px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-md bg-surface-container-highest dark:bg-inverse-surface mt-auto">
+<div class="flex flex-col items-center md:items-start gap-xs">
+<h4 class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary">LUXE ESTATE</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant dark:text-outline-variant">© 2024 Luxe Estate Professional. Todos los derechos reservados.</p>
+</div>
+<div class="flex gap-md">
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">Privacidad</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">Términos y Condiciones</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">Mapa del Sitio</a>
+</div>
+</footer>
+</main>
+<!-- Mobile Bottom Navigation Shell -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 h-16 bg-surface-container-lowest border-t border-outline-variant/10 flex justify-around items-center px-base z-50">
+<a class="flex flex-col items-center text-primary" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-[10px] font-bold">Inicio</span>
+</a>
+<a class="flex flex-col items-center text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">home_work</span>
+<span class="text-[10px]">Propiedades</span>
+</a>
+<div class="relative -top-6">
+<button class="w-12 h-12 bg-primary text-on-primary rounded-full shadow-lg flex items-center justify-center">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+<a class="flex flex-col items-center text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="text-[10px]">Clientes</span>
+</a>
+<a class="flex flex-col items-center text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px]">Ajustes</span>
+</a>
+</nav>
+</body></html>
