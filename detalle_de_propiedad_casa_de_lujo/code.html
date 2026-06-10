@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .sticky-sidebar {
+            position: sticky;
+            top: 100px;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface-variant": "#45464d",
+                        "on-secondary-container": "#54647a",
+                        "outline-variant": "#c6c6cd",
+                        "surface-container-low": "#f2f4f6",
+                        "secondary-container": "#d0e1fb",
+                        "surface-variant": "#e0e3e5",
+                        "primary": "#000000",
+                        "on-primary-fixed": "#131b2e",
+                        "on-tertiary-fixed": "#271901",
+                        "on-surface": "#191c1e",
+                        "surface-container-highest": "#e0e3e5",
+                        "surface-tint": "#565e74",
+                        "surface-bright": "#f7f9fb",
+                        "background": "#f7f9fb",
+                        "secondary-fixed-dim": "#b7c8e1",
+                        "inverse-on-surface": "#eff1f3",
+                        "surface-container": "#eceef0",
+                        "secondary-fixed": "#d3e4fe",
+                        "primary-fixed-dim": "#bec6e0",
+                        "on-tertiary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "outline": "#76777d",
+                        "tertiary": "#000000",
+                        "tertiary-fixed": "#fcdeb5",
+                        "tertiary-fixed-dim": "#dec29a",
+                        "on-tertiary-container": "#98805d",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "on-primary-container": "#7c839b",
+                        "surface-dim": "#d8dadc",
+                        "surface": "#f7f9fb",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed": "#dae2fd",
+                        "inverse-primary": "#bec6e0",
+                        "error": "#ba1a1a",
+                        "surface-container-high": "#e6e8ea",
+                        "on-primary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "on-background": "#191c1e",
+                        "primary-container": "#131b2e",
+                        "tertiary-container": "#271901",
+                        "secondary": "#505f76",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed-variant": "#38485d",
+                        "inverse-surface": "#2d3133",
+                        "on-secondary-fixed": "#0b1c30",
+                        "on-tertiary-fixed-variant": "#574425"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "md": "24px",
+                        "margin-desktop": "64px",
+                        "base": "8px",
+                        "lg": "48px",
+                        "xl": "80px",
+                        "sm": "12px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Montserrat"],
+                        "headline-lg-mobile": ["Montserrat"],
+                        "display-lg": ["Montserrat"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "title-md": ["Montserrat"],
+                        "label-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "title-md": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "label-sm": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "500"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-surface-bright text-on-surface font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Top Navigation Bar -->
+<header class="bg-surface-bright shadow-sm fixed top-0 w-full z-50 h-20 flex items-center">
+<div class="flex justify-between items-center max-w-[1200px] mx-auto px-margin-mobile md:px-margin-desktop w-full">
+<div class="font-headline-lg text-headline-lg tracking-tight text-primary">LUXE ESTATE</div>
+<nav class="hidden md:flex items-center gap-md">
+<a class="font-title-md text-title-md text-primary border-b-2 border-primary pb-1 transition-colors" href="#">Propiedades</a>
+<a class="font-title-md text-title-md text-on-surface-variant hover:text-primary transition-colors" href="#">Proyectos</a>
+<a class="font-title-md text-title-md text-on-surface-variant hover:text-primary transition-colors" href="#">Nosotros</a>
+<a class="font-title-md text-title-md text-on-surface-variant hover:text-primary transition-colors" href="#">Contacto</a>
+</nav>
+<div class="flex items-center gap-sm">
+<button class="bg-primary text-on-primary px-md py-xs rounded-lg font-label-sm hover:opacity-90 transition-opacity">Acceso Panel</button>
+<span class="material-symbols-outlined md:hidden text-primary">menu</span>
+</div>
+</div>
+</header>
+<main class="mt-20">
+<!-- Hero Gallery Section -->
+<section class="max-w-[1200px] mx-auto px-margin-mobile md:px-margin-desktop pt-md">
+<div class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-xs h-[400px] md:h-[600px] rounded-xl overflow-hidden shadow-sm">
+<div class="md:col-span-2 md:row-span-2 relative group overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A sprawling contemporary luxury mansion with floor-to-ceiling glass walls, nestled in a lush green valley during a soft golden hour. The architecture features clean horizontal lines and a minimalist white facade, reflecting a sophisticated high-end aesthetic. The lighting is warm and inviting, highlighting the premium natural materials and expansive interior spaces seen through the glass. The overall mood is serene and prestigious." src="https://lh3.googleusercontent.com/aida-public/AB6AXuANM2c0-Y8wxnO-ausMwLTiGO4UNb7Fbz2bvo0ySspm_Yi_hSY7efJ8cjaJ5MEodTg3I2q4I4z5Jk8yYiPbhhlwHxvl5WRCNXs4ihzO_qkXoL9XL2tgOlCp3KqDQ_iiI-e4mkvs0mV4aqE-2tvk2EuWR8_L0krOyjUPPLDRmmzZCl7D8gw310WCyWYf33_2IYzC66veFBdU1tugO8bMpLWYvaQ9awSu2l5dlSmpr-jT_dv9aImWlCyeiu6JT_02MUzRZga5CvNIHAEF"/>
+<div class="absolute top-md left-md bg-primary text-on-primary px-sm py-xs rounded-lg font-label-sm">EN VENTA</div>
+</div>
+<div class="hidden md:block relative group overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Modern minimalist kitchen interior with white marble countertops and dark charcoal cabinetry, illuminated by soft recessed architectural lighting. The design follows a professional luxury aesthetic with clean lines and high-end integrated appliances. Subtle morning sunlight filters through a large window, creating a bright and airy atmosphere. The color palette is composed of neutrals, emphasizing textures of stone and wood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjme3RCde1nRHgxghdp6ka-f4apznQAPI-S6JJZVO-zarg6gkcLTRBG5yoQalQU2-yyBgJkO96yauu_wgpQr-NcnZVLhittci1jA9-d76EBBA3KR1tyTbBj1aoIFrBLrsBxBbSlJGeS-aiVHY_sNUAlAOzPLc51GcR7Xj0htQbV9rQPG5A1OxzMZrHZRPQyRrvRlx9e6ShVoGIRqZHufASvFy-NEiT6vAu_IyfDdKq_LdsvhjR-F5cThK1J9ySmw5tiqf8r0IEjvaw"/>
+</div>
+<div class="hidden md:block relative group overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A spacious master bedroom suite featuring a king-sized bed with plush white linens and a minimalist wood headboard. The room opens onto a private balcony through sliding glass doors, offering a view of a serene garden. The lighting is soft and ambient, creating a relaxing atmosphere suitable for a luxury estate. Neutral tones and high-quality textures define the sophisticated interior design style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCt0HgjXKPjtg7rXEpivY1bRELqf7eSj4swa-O0msQ9OIbvifwdwRSWH7pFs3OMx7DUnlfT2nXKqytLgcYIx8IljKPzUtKts2cTAxPduOq8jMRK9joCOSK-DrV2Sw9vJq7RuckYkwEPhhCf3fjRT8SbyQlzMoLMIMA7hXmaLJRtPRB0CgGFcrdWGb9-BkAOYRwjvuPv-OYZnuAFSpco-DehmtU0N9HG8wRs3S4POKrPzkFWzAF7WToAOmDb6a8_PFmuQoJxq7ojVfZ6"/>
+</div>
+<div class="hidden md:block relative group overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Luxury bathroom with a freestanding white soaking tub placed near a large window overlooking a forest. The floor is covered in large-format light gray tiles, and the walls feature sleek vertical wood slats. The space is filled with soft natural light, enhancing the spa-like tranquility and minimalist luxury design. Every detail suggests high-end craftsmanship and modern professional design standards." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqJ-q2H4helerAFZnFE901nptb_043NsUDkw_-kl7cioFWvHziWcrLcT_vnlBBpioFgXnL4CbAHw_H7_2BrmdEWU2YHnoU5dscRaHio_MtVRvkxMhHoIllnlXoXGElWW4eQiVDBeTzc9hBttUzP8BXTkYYI-az5VrUR-3wXRsgLiLo0LP9l8cm-IBRP3ra0rWAceD1XJ8b8vitfZn-GO7rSql7091EYDnP6_8niAx2yckYdJaWLg0lOFs78SUV7_sgF-VES2ojFlJS"/>
+</div>
+<div class="hidden md:block relative group overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Evening shot of a private infinity pool reflecting a modern architectural villa under a twilight sky. The pool area is paved with smooth limestone and features minimalist outdoor furniture. Submerged pool lights cast a gentle blue glow, contrasting with the warm interior lights of the house. The atmosphere is quiet, exclusive, and representative of premium Mediterranean luxury living." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUdNqF8gY9Okt-JpS2OQRVxzohs2pdic60iVHu8oMou7hY3V6v5AwjXXDoeY30jXzhDyIDjdj4KHv0Ip0OqkdrKpGmCCrdufZwz2sBgCs72siJnuX9inV6nuZpmGca1AGWXbvH-0GfYWUGaXrvATa0NBChmSiY7-taeUvipxdWk2oRuzsb1gJ-ZRaM5O_wGPXWHqvipyEf2EMUHQ-vkigt8jYc9mV6KvRF4B_7S9jFRUjLomIZTtpQ9lIQVP7skgffreoKsMH1e4l-"/>
+<div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="bg-surface-container-lowest text-primary px-md py-xs rounded-lg font-label-sm">+ 12 Fotos</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Content Grid -->
+<section class="max-w-[1200px] mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-12 gap-lg mt-lg">
+<!-- Left Column: Details -->
+<div class="md:col-span-8">
+<div class="mb-lg">
+<div class="flex justify-between items-start mb-base">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-primary mb-xs">Residencia Serena Sky</h1>
+<p class="flex items-center gap-xs text-on-surface-variant font-body-md">
+<span class="material-symbols-outlined text-primary">location_on</span>
+                                La Zagaleta, Benahavís, España
+                            </p>
+</div>
+<div class="text-right">
+<span class="font-display-lg text-display-lg text-primary block">4.250.000€</span>
+<span class="text-on-surface-variant font-label-sm">Impuestos no incluidos</span>
+</div>
+</div>
+<!-- Key Features Row -->
+<div class="flex flex-wrap gap-md py-md border-y border-outline-variant/30 mt-md">
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-primary">bed</span>
+<span class="font-body-md">5 Dormitorios</span>
+</div>
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-primary">bathtub</span>
+<span class="font-body-md">6 Baños</span>
+</div>
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-primary">straighten</span>
+<span class="font-body-md">840 m²</span>
+</div>
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-primary">landscape</span>
+<span class="font-body-md">2.500 m² Parcela</span>
+</div>
+</div>
+</div>
+<!-- Description -->
+<div class="mb-lg">
+<h2 class="font-title-md text-title-md text-primary mb-md">Descripción</h2>
+<div class="font-body-lg text-on-surface-variant space-y-md">
+<p>Ubicada en el enclave más exclusivo de Europa, esta obra maestra arquitectónica redefine el concepto de vida de lujo. La Residencia Serena Sky ha sido diseñada para integrarse armoniosamente con su entorno natural, ofreciendo vistas panorámicas ininterrumpidas del Mar Mediterráneo y la costa africana.</p>
+<p>Cada detalle ha sido cuidadosamente seleccionado, desde los suelos de mármol de gran formato hasta los sistemas de domótica de última generación. La propiedad cuenta con un salón de doble altura, una cocina gourmet equipada con electrodomésticos de nivel profesional y una suite principal que ocupa un ala completa del nivel superior.</p>
+</div>
+</div>
+<!-- Technical Details (Bento-ish Grid) -->
+<div class="mb-lg">
+<h2 class="font-title-md text-title-md text-primary mb-md">Ficha Técnica</h2>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-gutter">
+<div class="bg-surface-container-low p-md rounded-xl">
+<span class="text-on-surface-variant font-label-sm block mb-xs">Año de Construcción</span>
+<span class="font-title-md text-primary">2023</span>
+</div>
+<div class="bg-surface-container-low p-md rounded-xl">
+<span class="text-on-surface-variant font-label-sm block mb-xs">Certificación Energética</span>
+<span class="font-title-md text-primary">Clase A+</span>
+</div>
+<div class="bg-surface-container-low p-md rounded-xl">
+<span class="text-on-surface-variant font-label-sm block mb-xs">Plazas de Garaje</span>
+<span class="font-title-md text-primary">4 Plazas</span>
+</div>
+<div class="bg-surface-container-low p-md rounded-xl">
+<span class="text-on-surface-variant font-label-sm block mb-xs">Orientación</span>
+<span class="font-title-md text-primary">Sur / Suroeste</span>
+</div>
+<div class="bg-surface-container-low p-md rounded-xl">
+<span class="text-on-surface-variant font-label-sm block mb-xs">Gastos Comunidad</span>
+<span class="font-title-md text-primary">450€ / mes</span>
+</div>
+<div class="bg-surface-container-low p-md rounded-xl">
+<span class="text-on-surface-variant font-label-sm block mb-xs">Tipo de Calefacción</span>
+<span class="font-title-md text-primary">Aerotermia</span>
+</div>
+</div>
+</div>
+<!-- Map Placeholder -->
+<div class="mb-lg">
+<h2 class="font-title-md text-title-md text-primary mb-md">Ubicación</h2>
+<div class="w-full h-[400px] rounded-xl overflow-hidden shadow-sm relative">
+<img class="w-full h-full object-cover" data-alt="A stylized minimalist map of a luxury residential area in Benahavis, Spain. The map uses a sophisticated dark theme with subtle golden lines representing roads and green areas for private gardens. The layout is clean and professional, focusing on property boundaries and geographic features of the Mediterranean coast. Soft ambient shadows provide depth to the topographical elements." data-location="Benahavis, Spain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIIjfleRqszlQZ-Qf7skM6AFQehBGWe6tnyIN7wThPhZiJerL2kkVI1lR5eUrqemLTYYf_QXbvUhS-Pb9aJfiT2s9JWv27VThxA_k0rwLKzMV5hK9bFBxEnbx36yLzox4MotckQbZTZQAfndDX-9ojpXmMFLmUrp0aBbe-3_FsJL_GWkTzOeOxA4dG2PA-7r3ha72hja3vDhpBqBzewXgfVJC1IfnHjGo08eTp092KV6G7yWtmvhycaOOMPMimeX0xRFiIwVf2NbV8"/>
+<div class="absolute inset-0 bg-primary/10 pointer-events-none"></div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+<span class="material-symbols-outlined text-primary bg-surface-container-lowest p-sm rounded-full shadow-lg scale-150" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Sticky Contact Form -->
+<div class="md:col-span-4 relative">
+<div class="sticky-sidebar bg-surface-container-lowest p-lg rounded-xl shadow-sm border border-outline-variant/20">
+<h3 class="font-title-md text-title-md text-primary mb-md">Contactar Agente</h3>
+<div class="flex items-center gap-md mb-lg">
+<img class="w-16 h-16 rounded-full object-cover" data-alt="Professional portrait of a high-end real estate agent in a sharp navy blue suit, standing against a minimalist modern office background. The lighting is soft and flattering, typical of corporate professional photography. The agent has a confident, approachable expression, conveying trust and expertise in the luxury market. The color palette is clean and monochromatic with cool tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9yCx6JXAykl10GeNQ7J9LsqMSyVElUkTw6CFcKT_NLNA6qNm9MLCWa-65Kdsit94smBEYEQSfsHsAcQAE4TYYL_cwZ3VR2n9WUMmxZVcxbn8dmA7fZvA4BV-2MHq_mjo2DH2FTfEZtTTL_FNp1n-3secOvyldTjzxQRzgnZuRm0-Oz41NhimcAIEof06zZE_CTwYbUszgbyzWfZEUY0jAAHkp2_lmDe-fg4O4oNxjwmjOvUqQTEdI6VAQVxIl5lfcsVdjX-5EeQwU"/>
+<div>
+<span class="font-title-md text-title-md text-primary block">Marco Rossi</span>
+<span class="text-on-surface-variant font-label-sm">Director Comercial Senior</span>
+</div>
+</div>
+<form class="space-y-md">
+<div>
+<label class="block font-label-sm text-on-surface-variant mb-xs">Nombre Completo</label>
+<input class="w-full bg-surface-container-low border-none rounded-lg p-md focus:ring-2 focus:ring-primary transition-all" placeholder="Juan Pérez" type="text"/>
+</div>
+<div>
+<label class="block font-label-sm text-on-surface-variant mb-xs">Correo Electrónico</label>
+<input class="w-full bg-surface-container-low border-none rounded-lg p-md focus:ring-2 focus:ring-primary transition-all" placeholder="juan@ejemplo.com" type="email"/>
+</div>
+<div>
+<label class="block font-label-sm text-on-surface-variant mb-xs">Mensaje</label>
+<textarea class="w-full bg-surface-container-low border-none rounded-lg p-md focus:ring-2 focus:ring-primary transition-all" placeholder="Deseo recibir más información..." rows="4"></textarea>
+</div>
+<button class="w-full bg-primary text-on-primary py-md rounded-lg font-title-md hover:opacity-90 transition-opacity" type="submit">Enviar Solicitud</button>
+</form>
+<div class="mt-lg pt-lg border-t border-outline-variant/30 flex flex-col gap-sm">
+<button class="flex items-center justify-center gap-xs font-label-sm text-primary hover:underline">
+<span class="material-symbols-outlined">call</span> +34 951 000 000
+                        </button>
+<button class="flex items-center justify-center gap-xs font-label-sm text-primary hover:underline">
+<span class="material-symbols-outlined">schedule</span> Agendar Visita Virtual
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Related Properties Section -->
+<section class="bg-surface-container-low py-xl mt-xl">
+<div class="max-w-[1200px] mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="flex justify-between items-end mb-lg">
+<h2 class="font-headline-lg text-headline-lg text-primary">Propiedades Similares</h2>
+<a class="font-label-sm text-primary flex items-center gap-xs hover:underline" href="#">
+                        Ver todas <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Property Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm group">
+<div class="h-64 overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A modern luxury villa with clean white walls and large dark-framed windows, surrounded by Mediterranean vegetation. The pool in the foreground reflects the soft blue evening sky. The design is minimalist and airy, following a high-end professional aesthetic. Subtle outdoor lighting creates a warm glow on the stone textures, suggesting a peaceful and exclusive residential atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBpRaQmiCWbd3li-rAGPX7iaDesQjheg46xrenxlYmd-Nl1A3EB6SuhYgp-djGs216F4DgeDzWF-1a53VUQc4suRaZnWbdjyXqZc9_xWwe-h0jOuAvDBxOsfkdKkRCGwv15m_9mm6mngzqhKAZP3G6lvVtvrjVJ_ieyluHERpL1ekFh4Mw0MQqelCyy7_GA9LdrkCSek9CZ9WaieYbzygMYtuoacLOxVjL574gvhcSRr7Ae2Kr_GZtCH1zYdUxfnTcda8RxYfVLEt_"/>
+<div class="absolute top-md right-md bg-surface-container-lowest/90 backdrop-blur-md px-sm py-xs rounded-lg font-title-md text-primary">3.150.000€</div>
+</div>
+<div class="p-md">
+<h3 class="font-title-md text-title-md text-primary mb-xs">Villa Lumière</h3>
+<p class="text-on-surface-variant font-label-sm mb-md">Sierra Blanca, Marbella</p>
+<div class="flex gap-md border-t border-outline-variant/20 pt-md">
+<span class="flex items-center gap-xs font-label-sm"><span class="material-symbols-outlined text-primary text-[20px]">bed</span> 4</span>
+<span class="flex items-center gap-xs font-label-sm"><span class="material-symbols-outlined text-primary text-[20px]">bathtub</span> 5</span>
+<span class="flex items-center gap-xs font-label-sm"><span class="material-symbols-outlined text-primary text-[20px]">straighten</span> 620m²</span>
+</div>
+</div>
+</div>
+<!-- Property Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm group">
+<div class="h-64 overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="An expansive luxury estate with traditional Mediterranean architectural elements blended with modern minimalist features. Large arched windows overlook a manicured lawn and a sparkling turquoise pool. The lighting is bright and summery, emphasizing the pristine white surfaces and blue sky. The scene is calm and sophisticated, representing prime real estate in a coastal location." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUv0VfjOq3NZ-Gu9TfYKIqgCHSBo579qKGAmZ5EdUoLQJZGDGean-gPhlJDjSqdBEy4mZ7xGPntKvy0Ybimg24pTTNqheZp3R-sSvpwIzgwgoTfjQPVffVyJa7uSXXQvMto_nFtXWo6KESEcnNirKeBq25sFIppXZGp0IylxOkv6ioFF8sr2ROEva_a2yeijcxh_ilaq79op0O4LeCyHTFTZ383gQ8KiYAv9qxNuBpdTTv7ya3GE8hSHikWOuB9NzVUcXYVdHS21oP"/>
+<div class="absolute top-md right-md bg-surface-container-lowest/90 backdrop-blur-md px-sm py-xs rounded-lg font-title-md text-primary">5.800.000€</div>
+</div>
+<div class="p-md">
+<h3 class="font-title-md text-title-md text-primary mb-xs">Palacio del Sol</h3>
+<p class="text-on-surface-variant font-label-sm mb-md">Casada del Rio, Estepona</p>
+<div class="flex gap-md border-t border-outline-variant/20 pt-md">
+<span class="flex items-center gap-xs font-label-sm"><span class="material-symbols-outlined text-primary text-[20px]">bed</span> 6</span>
+<span class="flex items-center gap-xs font-label-sm"><span class="material-symbols-outlined text-primary text-[20px]">bathtub</span> 7</span>
+<span class="flex items-center gap-xs font-label-sm"><span class="material-symbols-outlined text-primary text-[20px]">straighten</span> 1100m²</span>
+</div>
+</div>
+</div>
+<!-- Property Card 3 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm group">
+<div class="h-64 overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A modern architectural masterpiece featuring cantilevered concrete structures and vast glass panels overlooking a cliffside view. The property is illuminated by sophisticated architectural lighting that highlights the geometric volumes and premium materials like natural stone and dark wood. The mood is futuristic and ultra-luxurious, set against a deep blue dusk sky. The composition is clean and professional." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB09H69kofLVtM__o69dgpX6nN5_UQkU4dbqzmiA2fET_W0KbZuNPlPEimekg_1_N2h45OQzy2AYKPU3g5iXQY8mcYKIa0bThl1JBp8zI7GPFZKlmFs9GOokTnLs31ogvDtbyQMpJUp8UbFcHtd3zZYeDxbTmPqide4hAe1sI0COqVeiReGykTI5wU-MDPqc-Y42WNBcNerOwdU3buGp1JRM35I7gFJVuETzPviSefFnadjs475I-sAD-RC1UJD3_rH5W6zrD2ZFp5g"/>
+<div class="absolute top-md right-md bg-surface-container-lowest/90 backdrop-blur-md px-sm py-xs rounded-lg font-title-md text-primary">2.900.000€</div>
+</div>
+<div class="p-md">
+<h3 class="font-title-md text-title-md text-primary mb-xs">Atico Horizon</h3>
+<p class="text-on-surface-variant font-label-sm mb-md">Puerto Banús, Marbella</p>
+<div class="flex gap-md border-t border-outline-variant/20 pt-md">
+<span class="flex items-center gap-xs font-label-sm"><span class="material-symbols-outlined text-primary text-[20px]">bed</span> 3</span>
+<span class="flex items-center gap-xs font-label-sm"><span class="material-symbols-outlined text-primary text-[20px]">bathtub</span> 4</span>
+<span class="flex items-center gap-xs font-label-sm"><span class="material-symbols-outlined text-primary text-[20px]">straighten</span> 450m²</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-highest text-on-surface w-full py-lg px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-md">
+<div class="flex flex-col gap-xs items-center md:items-start">
+<div class="font-headline-lg text-headline-lg font-bold">LUXE ESTATE</div>
+<p class="font-label-sm text-on-surface-variant">© 2024 Luxe Estate Professional. Todos los derechos reservados.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-md">
+<a class="font-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Privacidad</a>
+<a class="font-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Términos y Condiciones</a>
+<a class="font-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Mapa del Sitio</a>
+</div>
+<div class="flex gap-md">
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer transition-colors">share</span>
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer transition-colors">print</span>
+</div>
+</footer>
+</body></html>
